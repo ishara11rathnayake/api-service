@@ -6,7 +6,7 @@ const request = require("request");
 router.get("/", (req, res, next) => {
   const code = req.query.code;
   request.get(
-    `http://localhost:3001/codeToState?code=${code}`,
+    `http://data-service.default.svc.cluster.local/codeToState?code=${code}`,
     (error, response, body) => {
       if (error) {
         return console.dir(error);
